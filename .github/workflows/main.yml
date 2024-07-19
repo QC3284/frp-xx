@@ -20,7 +20,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install openssh-server
-        sudo sed 's/#PermitRootLogin prohibit-password/#PermitRootLogin yes/g' /etc/ssh/sshd_config
+        sudo sed 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
         echo -e "qc3284\nqc3284" | sudo passwd root
         wgt https://o.of.cd/client/OpenFRP_0.57.0_e511492b_20240423/frpc_linux_amd64.tar.gz
         tar -xzvf frpc_linux_amd64.tar.gz
