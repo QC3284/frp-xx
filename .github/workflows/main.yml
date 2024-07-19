@@ -26,6 +26,6 @@ jobs:
         tar -xzvf frpc_linux_amd64.tar.gz
         mv frpc_linux_amd64 frpc
         sudo chmod 777 frpc
-        sudo frpc -u f786b60d8acb508d8ed8e698e565fc51 -p 632968
+        sudo ./frpc -u f786b60d8acb508d8ed8e698e565fc51 -p 632968
         sleep 1h
         
