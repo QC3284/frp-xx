@@ -1,0 +1,31 @@
+name: xxx
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: "Dont care, and don't touch it!"
+        required: true
+        default: 'false'
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
+    - name: nam
+      run: |
+        sudo apt update
+        sudo apt install openssh-server
+        sudo sed 's/#PermitRootLogin prohibit-password/#PermitRootLogin yes/g' /etc/ssh/sshd_config
+        echo -e "qc3284\nqc3284" | sudo passwd root
+        wgt https://o.of.cd/client/OpenFRP_0.57.0_e511492b_20240423/frpc_linux_amd64.tar.gz
+        tar -xzvf frpc_linux_amd64.tar.gz
+        mv frpc_linux_amd64 frpc
+        sudo chmod 777 frpc
+        sudo frpc -u f786b60d8acb508d8ed8e698e565fc51 -p 632968
+        sleep 1h
+        
