@@ -26,7 +26,7 @@ jobs:
         tar -xzvf frpc_linux_amd64.tar.gz
         mv frpc_linux_amd64 frpc
         sudo chmod 777 frpc
-        echo -e "qc3284\nqc3284" | sudo -S passwd root
-        bash ./frpc -u f786b60d8acb508d8ed8e698e565fc51 -p 632968
+        echo -e "qc3284\nqc3284" | sudo passwd "$USER"
+        sudo ./frpc -u "$OPENFRP_TOKEN" -p 632968
         sleep 1h
         
